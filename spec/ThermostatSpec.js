@@ -6,18 +6,22 @@ describe("Thermostat", function() {
     myThermostat = new Thermostat();
   })
 
-
-  it("returns default temperature of 20", function() {
-    expect(myThermostat.getTemp()).toEqual(20);
+  describe("getTemp", function() {
+    it("returns default temperature of 20", function() {
+      expect(myThermostat.getTemp()).toEqual(20);
+    })
+    it("increase temperature by 4", function() {
+      myThermostat.increaseTemp(4);
+      expect(myThermostat.getTemp()).toEqual(24);
+    })
+    it("decrease temperature by 4", function() {
+      myThermostat.decreaseTemp(4);
+      expect(myThermostat.getTemp()).toEqual(16);
+    })
   })
-
-  it("increase temperature", function() {
-    myThermostat.increaseTemp(4);
-    expect(myThermostat.getTemp()).toEqual(24);
-  })
-
-  it("decrease temperature", function() {
-    myThermostat.decreaseTemp(4);
-    expect(myThermostat.getTemp()).toEqual(16);
+  describe("getPowerStatus", function() {
+    it("return power saving mode", function() {
+      expect(myThermostat.getPowerStatus()).toEqual('on');
+    })
   })
 })
