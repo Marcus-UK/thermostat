@@ -1,5 +1,8 @@
+
+const DEFAULT_TEMP = 20;
+
 function Thermostat() {
-  this.temp = 20;
+  this.temp = DEFAULT_TEMP;
   this.powerStatus = 'on'
 }
 
@@ -17,4 +20,8 @@ Thermostat.prototype.decreaseTemp = function(decrease) {
 
 Thermostat.prototype.getPowerStatus = function() {
   return this.powerStatus;
+}
+
+Thermostat.prototype.resetTemp = function(number) {
+  this.temp = DEFAULT_TEMP;
 }
