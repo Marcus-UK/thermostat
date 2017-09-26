@@ -30,18 +30,18 @@ You can ask about the thermostat's current energy usage: < 18 is low-usage, < 25
 - temp
 - up
 - down
-- power_saver_status
-- power_saver_on
-- power_saver_off
-- reset_temp
-- energy_useage
+- power saver status
+- power saver on
+- power saver off
+- reset temp
+- energy useage
 
 
 ##  Functional representation of that story
 
-| Objects         | Messages                              |
-|-----------------|---------------------------------------|
-| Thermostat      |temp<br>up<br>down<br>                 |
+| Objects         | Messages                                                                                  |
+|-----------------|-------------------------------------------------------------------------------------------|
+| Thermostat      |temp<br>up<br>down<br>power_saver_status<br>power_saver_on<br>power_saver_off<br>reset_temp<br>energy_useage |
 
 
 ## How our Objects will use Messages to communicate with one another
@@ -59,4 +59,4 @@ Thermostat <-- power_saver_off
 
 Thermostat <-- reset_temp
 
-Thermostat <-- energy_useage
+Thermostat <-- energy_useage --> usage
