@@ -19,9 +19,13 @@ describe("Thermostat", function () {
   });
   describe("decreaseTemp", function () {
     it("decrease temperature by 4", function () {
-
       myThermostat.decreaseTemp(4);
       expect(myThermostat.getTemp()).toEqual(16);
+    });
+
+    it ("Gives error if temp is dropped below 10", function() {
+      expect(myThermostat.decreaseTemp(11)).toEqual("Temperature too low");
+
     });
   });
   describe("getPowerStatus", function () {

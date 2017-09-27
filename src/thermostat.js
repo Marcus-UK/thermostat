@@ -6,7 +6,7 @@ function Thermostat() {
   this.powerStatus = 'on'
 }
 
-Thermostat.prototype.getTemp = function(number) {
+Thermostat.prototype.getTemp = function() {
   return this.temp;
 }
 
@@ -15,7 +15,13 @@ Thermostat.prototype.increaseTemp = function(increase) {
 }
 
 Thermostat.prototype.decreaseTemp = function(decrease) {
-  this.temp -= decrease;
+  if (this.temp - decrease < 10) {
+  return 'Temperature too low'
+} else {
+    this.temp -= decrease
+    return this.temp
+  }
+
 }
 
 Thermostat.prototype.getPowerStatus = function() {
